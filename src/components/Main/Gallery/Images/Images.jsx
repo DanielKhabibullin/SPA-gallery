@@ -24,4 +24,3 @@ export const Images = ({image}) => {
 Images.propTypes = {
 	image: PropTypes.object,
 };
-

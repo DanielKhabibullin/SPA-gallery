@@ -5,7 +5,6 @@ import {requestTokenAsync} from '../../../../store/token/tokenAction.js';
 import {userRequestAsync} from '../../../../store/userData/userDataAction.js';
 import {urlAuth} from '../../../../api/auth.js';
 
-
 export const Auth = () => {
 	const token = useSelector((state) => state.token.token);
 	const userData = useSelector((state) => state.user.data);

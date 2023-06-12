@@ -14,4 +14,3 @@ Layout.propTypes = {
 		PropTypes.array,
 	]),
 };
-

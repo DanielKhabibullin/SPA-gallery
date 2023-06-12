@@ -7,7 +7,7 @@ import {Main} from './components/Main/Main.jsx';
 import {updateCode} from './store/codeReducer.js';
 import {updateToken} from './store/token/tokenAction.js';
 
-const App = () => {
+function App() {
 	const dispatch = useDispatch();
 	dispatch(updateCode(getCode()));
 	if (localStorage.getItem('bearer')) {
@@ -24,6 +24,6 @@ const App = () => {
 			/>
 		</Routes>
 	);
-};
+}
 
 export default App;

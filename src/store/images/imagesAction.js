@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import {URL_API, ACCESS_KEY} from '../../api/const';
 import axios from 'axios';
 
@@ -36,7 +35,8 @@ export const imagesRequestAsync = (id) => (dispatch, getState) => {
 
 	dispatch(imagesRequest());
 
-	axios(`${URL_API}/photos${id ? `/${id}` : `?per_page=30&page=${+page + 1}`}`, {
+	axios(`${URL_API}/photos${id ? `/${id}` :
+		`?per_page=30&page=${+page + 1}`}`, {
 		headers: {
 			Authorization: userAuth,
 		},
@@ -47,7 +47,8 @@ export const imagesRequestAsync = (id) => (dispatch, getState) => {
 			if (!id) {
 				if (Array.isArray(images)) {
 					dispatch(
-						imagesRequestSuccess({images: [...images, ...data.data], page: newPage})
+						imagesRequestSuccess({images: [...images, ...data.data],
+							page: newPage})
 					);
 				} else {
 					dispatch(imagesRequestSuccess({images: data.data, page: newPage}));
