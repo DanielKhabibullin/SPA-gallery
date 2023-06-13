@@ -38,9 +38,16 @@ export const Gallery = () => {
 		};
 	}, [endList.current]);
 
+	const breakpointColumnsObj = {
+		default: 5,
+		1024: 4,
+		768: 3,
+		640: 2
+	};
+
 	return (
 		<Masonry
-			breakpointCols={5}
+			breakpointCols={breakpointColumnsObj}
 			className='my-masonry-grid'
 			columnClassName='my-masonry-grid_column'
 		>

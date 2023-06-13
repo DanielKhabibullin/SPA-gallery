@@ -4,6 +4,7 @@
 	background-image: url("./img/login.svg");
 	background-color: transparent;
 	border: none;
+	color: var(--white);
 }
 
 .userDataWrapper {
@@ -11,4 +12,19 @@
 	justify-content: center;
 	align-items: center;
 	gap: 5px;
+	color: var(--white);
+}
+
+@media (max-width: 1024px) {
+	.auth {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+@media (max-width: 768px) {
+	.auth {
+		width: 30px;
+		height: 30px;
+	}
 }

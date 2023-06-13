@@ -5,6 +5,29 @@
 	color: blue;
 }
 
+.link img {
+	border-radius: 50%;
+}
+
 .link:hover {
 	text-decoration: underline;
+}
+
+.link:visited {
+	text-decoration: none;
+	color: purple;
+}
+
+@media (max-width: 1024px) {
+	.link img {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+@media (max-width: 768px) {
+	.link img {
+		width: 30px;
+		height: 30px;
+	}
 }

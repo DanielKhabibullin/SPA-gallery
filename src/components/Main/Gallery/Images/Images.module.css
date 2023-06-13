@@ -5,6 +5,7 @@
 .likes {
 	width: 41px;
 	height: 41px;
+	font-size: 14px;
 	position: absolute;
 	left: 10%;
 	bottom: 10%;
@@ -16,8 +17,21 @@
 	background-repeat: no-repeat;
 	background-color: transparent;
 	border: none;
+	transition: color 0.3s ease;
 }
 
-.link {
+.likes:hover {
+	cursor: pointer;
+	color: red;
+}
+
+@media (max-width: 1024px) {
+	.likes {
+		width: 30px;
+		height: 30px;
+	}
+}
+
+.link:hover {
 	cursor: pointer;
 }

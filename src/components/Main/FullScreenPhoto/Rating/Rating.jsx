@@ -6,35 +6,37 @@ import style from './Rating.module.css';
 
 export const Rating = ({image, id}) => {
 	const token = useSelector((state) => state.token.token);
-	const like = useSelector((state) => state.images.like);
-	const [likeCount, setLikeCount] = useState(0);
-	const [likeState, setLikeState] = useState(null);
+	const [likeCount, setLikeCount] = useState(image.likes);
+	const [likeState, setLikeState] = useState(image.liked_by_user);
 
 	useEffect(() => {
 		setLikeCount(image.likes);
-		setLikeState(like);
-	}, [image]);
+		setLikeState(image.liked_by_user);
+	}, [image.liked_by_user]);
 
 	const handleRating = () => {
-		setLikeState(!likeState);
-		if (like) {
+		if (token === '') {
+			alert('Авторизуйтесь, чтобы ставить лайки');
+			return;
+		}
+
+		if (likeState) {
 			setLikeCount((state) => state - 1);
+			setLikeState(false);
+			ratingRequest(id, false, token);
 		} else {
 			setLikeCount((state) => state + 1);
+			setLikeState(true);
+			ratingRequest(id, true, token);
 		}
-		ratingRequest(id, like, token);
 	};
 
 	return (
 		<div className={style.likesWrapper}>
-			{token !== '' ? (
-				<button
-					className={!likeState ? style.likeBtn : style.dislikeBtn}
-					onClick={() => handleRating()}
-				/>
-			) : (
-				<p>Авторизуйтесь чтобы ставить лайки</p>
-			)}
+			<button
+				className={!likeState ? style.likeBtn : style.dislikeBtn}
+				onClick={() => handleRating()}
+			/>
 			<p className={style.likes}>{likeCount}</p>
 		</div>
 	);
