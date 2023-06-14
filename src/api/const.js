@@ -5,5 +5,5 @@ export const ACCESS_KEY = 'ZrdxiASsu85tZhCS3xa3zNzMKkV4lpaQYb90apU27Go';
 export const SECRET_KEY = '2Z7TGdEmx6bbjdkmlPrb950Mck8WzI6JChlcmn9-TO0';
 export const RESPONSE_TYPE = 'code';
 export const GRANT_TYPE = 'authorization_code';
-export const REDIRECT_URI = 'http://localhost:3000/auth';
+export const REDIRECT_URI = 'https://spa-gallery-liard.vercel.app/auth';
 export const SCOPE = 'public read_user read_photos write_likes';
